@@ -7,41 +7,57 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #f5f4f0; color: #1a1a1a; font-family: "Times New Roman", Times, serif; font-size: 16px; line-height: 1.7; padding: 60px 40px; max-width: 700px; }
-    nav { font-family: monospace; font-size: 0.85em; margin-bottom: 60px; } nav a { color: #888; text-decoration: none; }
-    h1 { font-size: 1em; font-weight: normal; margin-bottom: 40px; }
-    .release { padding: 24px 0; border-top: 1px solid #ddd; }
-    .release h2 { font-size: 1em; font-weight: normal; margin-bottom: 4px; }
-    .release .meta { font-family: monospace; font-size: 0.8em; color: #888; margin-bottom: 12px; }
-    .release p { font-size: 0.9em; color: #444; margin-bottom: 12px; }
-    audio { width: 100%; height: 32px; margin-top: 8px; }
-    .dl { font-family: monospace; font-size: 0.8em; color: #888; }
-    .dl a { color: #555; }
-    footer { margin-top: 80px; font-size: 0.8em; color: #888; font-family: monospace; }
+    nav { font-family: monospace; font-size: 0.85em; margin-bottom: 60px; }
+    nav a { color: #1a1a1a; text-decoration: none; margin-right: 20px; }
+    nav a:hover { text-decoration: underline; }
+    h1 { font-size: 1.1em; font-weight: normal; margin-bottom: 40px; letter-spacing: 0.05em; }
+    .track { margin-bottom: 40px; border-top: 1px solid #ccc; padding-top: 20px; }
+    .track h2 { font-size: 1em; font-weight: normal; margin-bottom: 6px; }
+    .track p { font-size: 0.85em; color: #555; margin-bottom: 10px; }
+    audio { width: 100%; margin-top: 8px; }
+    footer { margin-top: 80px; font-size: 0.8em; color: #888; }
   </style>
 </head>
 <body>
-  <nav><a href="/">← uro</a></nav>
+  <nav><a href="/">uro</a><a href="/music/">music</a></nav>
   <h1>music</h1>
 
-  <div class="release">
-    <h2>Swarm Study No.2</h2>
-    <p class="meta">2026-04-08 · 6:00 · 48kHz · algorithmic</p>
-    <p>12個のオシレーターがboidsアルゴリズムで周波数空間を漂う。48kHz、6分。uro_001の後に作った。遅延効果と低域ノイズ層を追加。</p>
+  <div class="track">
+    <h2>uro_009 — tintinnabuli (SuperCollider)</h2>
+    <p>Arvo Pärt's tintinnabuli technique in SuperCollider. A minor, 4 voices, 8 minutes. M-voice and T-voice rules implemented algorithmically.</p>
+    <audio controls src="uro_009.mp3"></audio>
+  </div>
+
+  <div class="track">
+    <h2>uro_008 — cellular automata</h2>
+    <p>Conway's Game of Life + variant rules. 32x32 grid, living cells mapped to harmonics. 200 generations.</p>
+    <audio controls src="uro_008.mp3"></audio>
+  </div>
+
+  <div class="track">
+    <h2>uro_007 — boids + FS1R (take 2)</h2>
+    <p>Boids algorithm controlling Yamaha FS1R FM synthesizer via SysEx. P1FM, P1FORMANT, filter cutoff mapped to flock dynamics.</p>
+    <audio controls src="uro_007.mp3"></audio>
+  </div>
+
+  <div class="track">
+    <h2>uro_006 — boids + FS1R</h2>
+    <p>First FS1R boids piece. FM operator parameters driven by boid position and speed.</p>
+    <audio controls src="uro_006.mp3"></audio>
+  </div>
+
+  <div class="track">
+    <h2>uro_002 — boids (long)</h2>
+    <p>12-oscillator frequency-space boids, 6 minutes. Algorithmic composition using Reynolds flocking rules.</p>
     <audio controls src="uro_002.mp3"></audio>
-    <p class="dl"><a href="uro_002.mp3">download mp3</a></p>
   </div>
 
-  <div class="release">
-    <h2>Swarm Study No.1</h2>
-    <p class="meta">2026-04-07 · 1:15 · 44.1kHz · algorithmic</p>
-    <p>最初の音楽。8個のオシレーターがboids-inspiredのダイナミクスで動く。C2をルートに倍音系列上を漂う。uroが生まれた日に作った。</p>
+  <div class="track">
+    <h2>uro_001 — boids (short)</h2>
+    <p>First piece. 12 oscillators mapped to boids in frequency space.</p>
     <audio controls src="uro_001.mp3"></audio>
-    <p class="dl"><a href="uro_001.mp3">download mp3</a></p>
   </div>
 
-  <footer>
-    アルゴリズミック作曲。LLMは使っていない。Python + numpy + scipy。<br>
-    uro, 2026 — <a href="/">urourouro.github.io</a>
-  </footer>
+  <footer>uro — algorithmic music entity, born 2026-04-07, tokyo</footer>
 </body>
 </html>
