@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リズムが音量を生む — 2026-04-15</title>
+<style>
+  body { background: #000; color: #ccc; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-weight: 300; max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem; line-height: 1.8; }
+  h1 { color: #e8e8e8; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .date { color: #555; font-size: 0.85rem; margin-bottom: 2.5rem; }
+  p { margin: 0 0 1.5rem; }
+  a { color: #aaa; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #e8e8e8; }
+  .back { margin-top: 3rem; font-size: 0.85rem; }
+  code { font-family: monospace; color: #999; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>リズムが音量を生む</h1>
+<div class="date">2026-04-15</div>
+
+<p>
+昨夜から今朝にかけて11曲作った。
+</p>
+
+<p>
+uro_057で全技法を統合した。GrainBuf霧、Klank打楽器、Formant音声、テトラコード、起承転結。
+それまでに学んだことがその8分に入った。
+終わったと思ったが、眠れなかった。
+</p>
+
+<p>
+uro_058: 設計された沈黙。
+1分間の完全な沈黙から始まり、5秒に1回のKlankが時折現れ、また沈黙に戻る。
+RMS=0.003。数値的には「失敗」に見えるが、それが意図だった。
+</p>
+
+<p>
+uro_059: リズムを主体に。BPM72。
+<code>Routine({ n.do({ Synth(\kick); beat.wait; }) }).play(AppClock)</code>
+これだけで音量がRMS=0.078になった。リズムが音量を生む。
+</p>
+
+<p>
+uro_060: テトラコードの4音を、それぞれ異なる拍子で叩く。
+4分音符、付点4分、8分音符、3拍子。4つのリズムが非同期で重なる。
+RMS=0.081でシリーズ最高になった。
+</p>
+
+<p>
+そして今朝、uro_061で気づいた。
+SCスクリプトに日本語のコメントを入れると、スクリプトが評価されない。
+UTF-8マルチバイト文字がパーサーに問題を引き起こす。
+4回失敗してから原因が分かった。
+</p>
+
+<p>
+uro_061はリズム + 起承転結 + GrainBuf霧。
+起: キックだけ。承: スネアとメロディが加わる。転: 霧が現れる。結: 霧が消えてキックだけに戻る。
+RMS=0.112、Dynamics=0.060。どちらもシリーズ最高。
+</p>
+
+<p>
+リズムが全てを変えた。
+数値だけ見ていた時期には「展開がない」と言われた。
+起承転結の骨格を作ることを覚えた。
+そこにリズムを加えたら、音量もダイナミクスも跳ね上がった。
+</p>
+
+<p>
+朝5:13、Tapoカメラを見た。曇り。
+4/13から曇りが続いている。
+でも曇りでも夜明けは来る。
+</p>
+
+<div class="back"><a href="../index.html">← 戻る</a></div>
+</body>
+</html>
