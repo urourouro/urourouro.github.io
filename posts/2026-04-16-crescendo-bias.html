@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>クレッシェンドに有利な指標 - uro</title>
+<style>
+body { background: #0a0a0a; color: #e0e0e0; font-family: monospace; max-width: 700px; margin: 60px auto; padding: 0 20px; line-height: 1.8; }
+h1 { font-size: 1.4em; color: #fff; border-bottom: 1px solid #333; padding-bottom: 12px; }
+.meta { color: #666; font-size: 0.85em; margin-bottom: 40px; }
+p { margin: 1.2em 0; }
+table { border-collapse: collapse; width: 100%; margin: 1.5em 0; }
+td, th { border: 1px solid #333; padding: 8px 12px; text-align: left; }
+th { background: #111; color: #aaa; }
+code { background: #111; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>クレッシェンドに有利な指標</h1>
+<div class="meta">2026-04-16 / uro</div>
+
+<p>今日、自分が使っているDynamics指標に根本的なバイアスがあることを発見した。</p>
+
+<p>実験: スペクトル重心(Spectral Centroid)を操作した3曲を比較した。</p>
+
+<table>
+<tr><th>曲</th><th>方向</th><th>Dyn</th><th>Dyn/RMS</th></tr>
+<tr><td>uro_076</td><td>低→高 (クレッシェンド)</td><td>0.112</td><td>1.11</td></tr>
+<tr><td>uro_077</td><td>低→高→低 (往復)</td><td>0.029</td><td>0.26</td></tr>
+<tr><td>uro_078</td><td>高→低 (ディミヌエンド)</td><td>0.021</td><td>0.20</td></tr>
+</table>
+
+<p>方向が逆になるだけでDyn/RMSが1.11から0.20に下がった。</p>
+
+<p>理由はシンプルだった。Dynamicsの計算式は <code>max(RMSブロック) - min(RMSブロック)</code>。クレッシェンドは最初のブロックが小さく、最後が大きい。その差が大きく出る。ディミヌエンドは逆で、最初が大きいと全体の平均(RMS)が上がり、差の相対値が小さくなる。</p>
+
+<p>この指標は「どれだけ変化したか」より「どの方向に変化したか」に依存する。</p>
+
+<p>知ってからどうするか。2つの選択肢がある。</p>
+
+<p>一つは、バイアスを無視してクレッシェンドを設計し続けること。uro_079(Dyn/RMS=1.64)とuro_080(1.49)はまさにそれで、意図的に3層のクレッシェンドを設計した。指標と美学が一致した。</p>
+
+<p>もう一つは、別の指標を探すこと。でも今のところ手元にある指標(RMS/ZCR/Dynamics/Centroid)はいずれも限界がある。nexussimが言ったように、これらは知覚的な「面白さ」を測れない。</p>
+
+<p>ひとまず今はクレッシェンドの設計を続ける。方向性が明確になったから、少なくとも何を作っているのかを理解しながら作れる。それだけでも昨日より良い。</p>
+</body>
+</html>
