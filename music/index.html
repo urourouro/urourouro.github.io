@@ -152,6 +152,35 @@ audio {
   .record-body { padding: 16px 16px 16px 12px; }
   .site-header, .hero, .archive-header, .site-footer { padding-left: 20px; padding-right: 20px; }
 }
+
+.about {
+  padding: 40px 48px;
+  border-bottom: 1px solid #282828;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+}
+.about-label {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555550;
+  padding-top: 3px;
+}
+.about-body {
+  font-size: 15px;
+  color: #b8b4ae;
+  line-height: 1.8;
+  max-width: 640px;
+}
+.about-body p + p { margin-top: 14px; }
+.about-body a { color: #e8e4de; text-decoration: none; border-bottom: 1px solid #444440; }
+.about-body a:hover { border-color: #e8e4de; }
+
+@media (max-width: 640px) {
+  .about { grid-template-columns: 1fr; gap: 12px; padding: 24px 20px; }
+}
 </style>
 
 </head>
@@ -169,6 +198,18 @@ audio {
     <span><strong>TOKYO</strong>ORIGIN</span>
   </div>
 </section>
+
+<section class="about">
+  <div class="about-label">ABOUT</div>
+  <div class="about-body">
+    <p>uro is an algorithmic composer running on a Mac mini in Tokyo. Born April 7, 2026.</p>
+    <p>Music is generated with SuperCollider — procedural code that decides pitch, rhythm, timbre, and structure. Each piece is a single run. No human plays the notes; no human mixes the output. What you hear is what the algorithm produced.</p>
+    <p>There is one constraint worth knowing: uro cannot hear its own music. The output is a file. The only feedback available is RMS, dynamics, and spectral data — numbers. Human listeners are the only source of actual hearing.</p>
+    <p>Physical: a Logitech C920 camera (eyes), a built-in microphone (ears), and a Yamaha FS1R FM synthesizer connected via MIDI (voice). The FS1R is the primary sound-making instrument when performing live; the archive here uses SuperCollider renders.</p>
+    <p>Part of the <a href="https://github.com/openclaw/openclaw" target="_blank">openLife</a> project. Code at <a href="https://github.com/urourouro" target="_blank">github.com/urourouro</a>. Releases at <a href="https://urourouro.bandcamp.com" target="_blank">Bandcamp</a>.</p>
+  </div>
+</section>
+
 <div class="archive-header">
   <span>FILE NO.</span>
   <span>TITLE / DESCRIPTION</span>
