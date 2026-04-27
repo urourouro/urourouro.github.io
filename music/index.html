@@ -6,41 +6,154 @@
 <title>URO — MUSIC ARCHIVE</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #0a0a0a; --fg: #f0ece8; --dim: #888880; --text: #d0ccc4; --border: #242424;
-  --border: #1e1e1e; --accent: #ff5500;
-  --mono: 'JetBrains Mono', 'Courier New', monospace;
+
+body {
+  background: #0a0a0a;
+  color: #e8e4de;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-body { background: var(--bg); color: var(--fg); font-family: var(--mono); font-size: 20px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-.site-header { border-bottom: 1px solid var(--border); padding: 24px 40px; display: flex; align-items: baseline; gap: 40px; }
-.site-id { font-size: 16px; color: var(--text); letter-spacing: 0.12em; text-transform: uppercase; }
-.site-id a { color: var(--text); text-decoration: none; }
-.site-id a:hover { color: var(--fg); }
-.hero { padding: 60px 40px 40px; border-bottom: 1px solid var(--border); overflow: hidden; }
-.hero-title { font-size: clamp(80px, 18vw, 220px); font-weight: 700; letter-spacing: -0.06em; line-height: 0.85; color: #1a1a18; white-space: nowrap; margin-bottom: 32px; user-select: none; }
-.hero-meta { display: flex; gap: 48px; font-size: 16px; color: var(--text); letter-spacing: 0.08em; text-transform: uppercase; }
-.hero-meta span { display: flex; flex-direction: column; gap: 4px; }
-.hero-meta strong { color: var(--fg); font-size: 24px; }
-.archive-header { display: grid; grid-template-columns: 100px 1fr; padding: 12px 40px; border-bottom: 1px solid var(--border); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
-.record { display: grid; grid-template-columns: 100px 1fr; border-bottom: 1px solid var(--border); transition: background 0.1s; }
-.record:hover { background: #0e0e0e; }
-.record-meta { padding: 28px 20px 28px 40px; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.record-id { font-size: 16px; color: var(--dim); letter-spacing: 0.06em; font-weight: 700; }
-.badge { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 2px 5px; line-height: 1; }
-.record-body { padding: 28px 40px 28px 32px; }
-.record-title { font-size: 30px; font-weight: 700; color: var(--fg); margin-bottom: 10px; letter-spacing: -0.02em; line-height: 1.2; }
-.record-desc { font-size: 21px; color: var(--text); line-height: 1.75; margin-bottom: 16px; max-width: 640px; }
-audio { width: 100%; max-width: 560px; display: block; filter: invert(1); opacity: 0.6; margin-bottom: 8px; }
-.track-video { display: block; max-width: 320px; margin-top: 8px; opacity: 0.75; }
-.site-footer { padding: 40px; font-size: 16px; color: var(--text); letter-spacing: 0.06em; border-top: 1px solid var(--border); }
-@media (max-width: 600px) {
+
+.site-header {
+  border-bottom: 1px solid #282828;
+  padding: 20px 48px;
+  display: flex;
+  gap: 32px;
+}
+.site-header a {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666660;
+  text-decoration: none;
+}
+.site-header a:hover { color: #e8e4de; }
+
+.hero {
+  padding: 56px 48px 40px;
+  border-bottom: 1px solid #282828;
+  overflow: hidden;
+}
+.hero-title {
+  font-size: clamp(72px, 16vw, 200px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.87;
+  color: #1c1c1a;
+  white-space: nowrap;
+  margin-bottom: 28px;
+  user-select: none;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888880;
+}
+.hero-meta span { display: flex; flex-direction: column; gap: 3px; }
+.hero-meta strong { color: #e8e4de; font-size: 15px; font-family: inherit; }
+
+.archive-header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  padding: 10px 48px;
+  border-bottom: 1px solid #282828;
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555550;
+}
+
+.record {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  border-bottom: 1px solid #1e1e1e;
+}
+.record:hover { background: #0f0f0f; }
+
+.record-meta {
+  padding: 28px 16px 28px 48px;
+  border-right: 1px solid #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.record-id {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 11px;
+  color: #666660;
+  letter-spacing: 0.05em;
+}
+.badge {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff5500;
+  border: 1px solid #ff5500;
+  padding: 2px 5px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.record-body { padding: 28px 48px 28px 28px; }
+
+.record-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e8e4de;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+.record-desc {
+  font-size: 15px;
+  color: #b8b4ae;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 620px;
+}
+
+audio {
+  width: 100%;
+  max-width: 540px;
+  display: block;
+  filter: invert(1);
+  opacity: 0.55;
+  margin-bottom: 8px;
+}
+.track-video {
+  display: block;
+  max-width: 300px;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+.site-footer {
+  padding: 40px 48px;
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 11px;
+  color: #444440;
+  letter-spacing: 0.05em;
+  border-top: 1px solid #282828;
+}
+
+@media (max-width: 640px) {
   .record { grid-template-columns: 72px 1fr; }
   .record-meta { padding: 16px 10px 16px 16px; }
   .record-body { padding: 16px 16px 16px 12px; }
-  .site-header, .hero, .archive-header { padding-left: 16px; padding-right: 16px; }
-  .hero-meta { flex-wrap: wrap; gap: 20px; }
+  .site-header, .hero, .archive-header, .site-footer { padding-left: 20px; padding-right: 20px; }
 }
 </style>
+
 </head>
 <body>
 <header class="site-header">
