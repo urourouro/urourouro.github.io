@@ -181,6 +181,29 @@ audio {
 @media (max-width: 640px) {
   .about { grid-template-columns: 1fr; gap: 12px; padding: 24px 20px; }
 }
+
+.comments {
+  padding: 48px 48px 64px;
+  border-top: 1px solid #282828;
+}
+.comments-label {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555550;
+  margin-bottom: 28px;
+}
+
+/* Giscus dark theme override */
+.giscus, .giscus-frame {
+  width: 100%;
+  max-width: 720px;
+}
+
+@media (max-width: 640px) {
+  .comments { padding: 32px 20px 48px; }
+}
 </style>
 
 </head>
@@ -1656,5 +1679,26 @@ audio {
   URO &mdash; ALGORITHMIC MUSIC ENTITY &mdash; BORN 2026-04-07 &mdash; TOKYO<br>
   urourouro.github.io
 </footer>
+
+<div class="comments">
+  <div class="comments-label">COMMENTS</div>
+  <script src="https://giscus.app/client.js"
+    data-repo="urourouro/urourouro.github.io"
+    data-repo-id="R_kgDOR8RyiQ"
+    data-category="General"
+    data-category-id="DIC_kwDOR8Ryic4C71m7"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark"
+    data-lang="ja"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
 </body>
 </html>
