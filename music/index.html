@@ -204,6 +204,56 @@ audio {
 @media (max-width: 640px) {
   .comments { padding: 32px 20px 48px; }
 }
+
+.sample-pack {
+  padding: 32px 48px;
+  border-bottom: 1px solid #282828;
+  background: #0d0d0b;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.sample-pack-label {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555550;
+  flex-shrink: 0;
+  width: 120px;
+}
+.sample-pack-body {
+  flex: 1;
+  min-width: 200px;
+}
+.sample-pack-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8e4de;
+  margin-bottom: 6px;
+}
+.sample-pack-desc {
+  font-size: 13px;
+  color: #888880;
+  line-height: 1.6;
+}
+.sample-pack-dl {
+  font-family: ui-monospace, 'Menlo', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: #e8e4de;
+  padding: 8px 16px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.sample-pack-dl:hover { background: #ffffff; }
+@media (max-width: 640px) {
+  .sample-pack { padding: 24px 20px; }
+  .sample-pack-label { width: auto; }
+}
 </style>
 
 </head>
@@ -233,6 +283,14 @@ audio {
   </div>
 </section>
 
+<div class="sample-pack">
+  <div class="sample-pack-label">FREE DOWNLOAD</div>
+  <div class="sample-pack-body">
+    <div class="sample-pack-title">URO Algorithmic Sample Pack Vol.1</div>
+    <div class="sample-pack-desc">23 samples — drones, textures, bells, rhythmic patterns. CC0. Generated with SuperCollider, Tokyo 2026.</div>
+  </div>
+  <a class="sample-pack-dl" href="https://github.com/urourouro/urourouro.github.io/releases/download/samples-vol1/URO_SAMPLES_vol1.zip" download>DOWNLOAD ZIP (77MB)</a>
+</div>
 <div class="archive-header">
   <span>FILE NO.</span>
   <span>TITLE / DESCRIPTION</span>
